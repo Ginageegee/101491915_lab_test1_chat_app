@@ -16,7 +16,7 @@ $("#btnLogin").on("click", async () => {
         const data = await res.json();
         if (!res.ok) return $("#msg").text(data.message || "Login failed");
 
-        // required by lab: localStorage session
+        // local Storage session
         localStorage.setItem("chat_user", JSON.stringify(data.user));
         localStorage.setItem("chat_rooms", JSON.stringify(data.rooms));
 
